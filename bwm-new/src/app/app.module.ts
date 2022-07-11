@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 
+import { RentalModule } from './rental/rental.module';
+
 // root module
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { HeaderComponent } from './shared/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RentalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

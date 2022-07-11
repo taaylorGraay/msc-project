@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from './components/shared/Header';
+import RentalHome from './pages/RentalHome';
 
+// Explaining how everyhing works (:
 const App = () => {
   return (
-    <div>HelloWorld
-      <h2>What a nice Day</h2>
+    <div>
+      <Header />
+      <RentalHome />
     </div>
   )
 }
