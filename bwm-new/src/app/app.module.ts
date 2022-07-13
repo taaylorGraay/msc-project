@@ -11,7 +11,7 @@ import { RentalModule } from './rental/rental.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
