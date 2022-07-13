@@ -14,6 +14,7 @@ export class RentalListingComponent implements OnInit, IRental{
   rentals: Rental[] = [];
   someData = 'Some Data1';
   isLoaded = false;
+  parentData = 10;
 
   constructor(private rentalService: RentalService){}
 

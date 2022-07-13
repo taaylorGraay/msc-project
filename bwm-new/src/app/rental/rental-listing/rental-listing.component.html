@@ -5,7 +5,18 @@
     <div 
       *ngFor="let rental of rentals"
       class="col-md-3 col-xs-12">
-        <bwm-rental-card [rental]="rental"></bwm-rental-card>
+        Parent: {{parentData}}
+        <bwm-rental-card 
+          [rental]="rental"
+          [(childData)]="parentData">
+        </bwm-rental-card>
+        
+        <!-- 2 way data binding is transformed into this -->
+        <!-- <bwm-rental-card 
+          [rental]="rental"
+          [childData]="parentData"
+          (childDataChange)="parentData = $event">
+        </bwm-rental-card> -->
     </div>
   </div>
 </div>
