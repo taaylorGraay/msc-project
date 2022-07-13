@@ -5,7 +5,8 @@ import { Rental } from '../shared/rental.model';
 
 @Component({
   selector: 'bwm-rental-detail',
-  templateUrl: './rental-detail.component.html'
+  templateUrl: './rental-detail.component.html',
+  styleUrls: ['./rental-detail.component.scss']
 })
 export class RentalDetailComponent {
 
@@ -19,7 +20,7 @@ export class RentalDetailComponent {
     this.route.params.subscribe(params => {
       this.rentalService
         .getRentalById(params['rentalId'])
-        .subscribe((rental: Rental) => {
+        .subscribe(rental => {
           this.rental = rental;
         })
     })
