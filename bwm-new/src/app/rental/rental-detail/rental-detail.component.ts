@@ -14,9 +14,7 @@ export class RentalDetailComponent {
 
   constructor(
     private rentalService: RentalService,
-    private route: ActivatedRoute) {
-      this.helloWorld();
-    }
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -27,14 +25,4 @@ export class RentalDetailComponent {
         })
     })
   }
-  // Default
-  helloWorld(message: string = "Hola World!!!!") {
-    console.log(message)
-  }
-
-  // Optional
-  // helloWorld(message?: string) {
-  //   if (!message) { alert('Hello Guys!'); return; }
-  //   alert(message);
-  // }
 }
