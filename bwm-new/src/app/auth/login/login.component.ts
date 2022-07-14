@@ -27,18 +27,21 @@ export class LoginComponent implements OnInit {
       ]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
-  }
+  } 
 
-  // initForm() {
-  //   this.loginForm = this.fb.group({
-  //     email: ['', [
-  //       Validators.required, 
-  //       Validators.pattern(this.emailPattern),
-  //       forbiddenEmailValidator('jerga99@gmail.com')
-  //     ]],
-  //     password: ['', [Validators.required, Validators.minLength(6)]]
-  //   }, {validators: [sameAsValidator(['password', 'email'])]});
-  // }
+/*  
+ initForm() {
+     this.loginForm = this.fb.group({
+       email: ['', [
+         Validators.required, 
+         Validators.pattern(this.emailPattern),
+         forbiddenEmailValidator('jerga99@gmail.com')
+       ]],
+       password: ['', [Validators.required, Validators.minLength(6)]]
+     }, {validators: [sameAsValidator(['password', 'email'])]});
+   } 
+   
+*/
 
   login() {
     if (this.loginForm.invalid) { return; }
