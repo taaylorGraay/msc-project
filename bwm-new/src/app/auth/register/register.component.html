@@ -3,7 +3,10 @@
     <div class="row">
       <div class="col-md-5">
         <h1 class="page-title">Register</h1>
-        <form #registerForm="ngForm">
+        <form
+          #registerForm="ngForm"
+          [sameAs]="['password', 'passwordConfirmation']"
+        >
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -36,6 +39,7 @@
               #email="ngModel"
               required
               [pattern]="emailPattern"
+              forbiddenEmail="jerga99@gmail.com"
               name="email"
               type="email"
               class="form-control"
@@ -46,6 +50,9 @@
               class="alert alert-danger"
             >
               <div *ngIf="email.errors?.['required']">Email is required!</div>
+              <div *ngIf="email.errors?.['forbiddenEmail']">
+                Provided email is not allowed!
+              </div>
               <div *ngIf="email.errors?.['pattern']">
                 Email format is not valid!
               </div>
@@ -103,9 +110,17 @@
                 Password Confirmation must be at least 6 characters long!
               </div>
             </div>
+            <div
+              *ngIf="
+                registerForm.errors?.['sameAs'] && !passwordConfirmation.pristine
+              "
+              class="alert alert-danger"
+            >
+              Password confirmation must be the same as password!
+            </div>
           </div>
           <button
-           [disabled]="registerForm.invalid"
+            [disabled]="registerForm.invalid"
             (click)="register(registerForm)"
             type="submit"
             class="btn bwm-btn-main"
