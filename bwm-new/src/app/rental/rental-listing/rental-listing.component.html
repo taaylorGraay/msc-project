@@ -6,8 +6,21 @@
       *ngFor="let rental of rentals"
       class="col-md-3 col-xs-12">
         <bwm-rental-card 
-          [rental]="rental">
+          [rentalItem]="rental">
         </bwm-rental-card>
     </div>
+
+    <!-- <div *bwmNgFor="let num of [1,2,3]" class="col-md-3 col-xs-12">
+      {{num}}
+    </div> -->
+
+    <!-- Angular consumed the <ng-template> content during its actual rendering and replaced the <ng-template> with a diagnostic comment. -->
+    <!-- <ng-template bwmNgFor let-num [bwmNgForOf]="[1,2,3]">
+      <div class="col-md-3 col-xs-12">
+        {{num}}
+      </div>
+    </ng-template> -->
+
+
   </div>
 </div>
