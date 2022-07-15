@@ -1,7 +1,8 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from "react-redux";
-import { fetchRentalById } from "../actions";
-import { capitalize } from '../helpers/functions';
+import { fetchRentalById } from 'actions';
+import { capitalize } from 'helpers/functions';
 
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function withRouter(Component) {
 
 class RentalDetail extends React.Component {
   componentDidMount() {
-    const {id} = this.props.router.params;
+    const { id } = this.props.router.params;
     this.props.dispatch(fetchRentalById(id));
   }
 
@@ -75,24 +76,24 @@ class RentalDetail extends React.Component {
                   <div className="row">
                     <div className="col-md-6">
                       <span>
-                        <i className="fa fa-asterisk"></i> Cooling
+                        <FontAwesomeIcon icon="asterisk" /> Cooling
                       </span>
                       <span>
-                        <i className="fa fa-thermometer"></i> Heating
+                        <FontAwesomeIcon icon="thermometer" /> Heating
                       </span>
                       <span>
-                        <i className="fa fa-location-arrow"></i> Iron
+                        <FontAwesomeIcon icon="location-arrow" /> Iron
                       </span>
                     </div>
                     <div className="col-md-6">
                       <span>
-                        <i className="fa fa-desktop"></i> Working area
+                        <FontAwesomeIcon icon="desktop" /> Working area
                       </span>
                       <span>
-                        <i className="fa fa-cube"></i> Washing machine
+                        <FontAwesomeIcon icon="cube" /> Washing machine
                       </span>
                       <span>
-                        <i className="fa fa-cube"></i> Dishwasher
+                        <FontAwesomeIcon icon="archive" /> Dishwasher
                       </span>
                     </div>
                   </div>
