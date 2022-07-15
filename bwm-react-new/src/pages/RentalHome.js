@@ -1,45 +1,12 @@
 import React from 'react';
 import RentalCard from '../components/rental/RentalCard';
+import { connect } from 'react-redux'
+import { fetchRentals } from '../actions';
 
 class RentalHome extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      rentals: [{
-        _id: '1',
-        title: "Nice view on ocean",
-        city: "San Francisco",
-        category: "condo",
-        image: "http://via.placeholder.com/350x250",
-        numOfRooms: 4,
-        shared: true,
-        description: "Very nice apartment in center of the city.",
-        dailyPrice: 43
-      },
-      {
-        _id: '2',
-        title: "Modern apartment in center",
-        city: "New York",
-        category: "apartment",
-        image: "http://via.placeholder.com/350x250",
-        numOfRooms: 1,
-        shared: false,
-        description: "Very nice apartment in center of the city.",
-        dailyPrice: 11
-      },
-      {
-        _id: '3',
-        title: "Old house in nature",
-        city: "Bratislava",
-        category: "house",
-        image: "http://via.placeholder.com/350x250",
-        numOfRooms: 5,
-        shared: true,
-        description: "Very nice apartment in center of the city.",
-        dailyPrice: 23
-      }]
-    }
+  componentDidMount() {
+    this.props.dispatch(fetchRentals());
   }
 
   renderRentals = (rentals) => 
@@ -50,7 +17,7 @@ class RentalHome extends React.Component {
     );
   
   render() {
-    const { rentals } = this.state;
+    const { rentals } = this.props;
 
     return (
       <div className="card-list">  
@@ -63,4 +30,10 @@ class RentalHome extends React.Component {
   }
 }
 
-export default RentalHome;
+const mapStateToProps = (state) => {
+  return {
+    rentals: state.rentals
+  }
+}
+
+export default connect(mapStateToProps)(RentalHome);
