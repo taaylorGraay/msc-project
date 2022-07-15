@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/shared/Header';
-import Routes from './Routes';
+import AppRoutes from './Routes';
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux'
@@ -13,7 +13,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Header />
-        <Routes />
+        <AppRoutes />
       </Router>
     </Provider>
   )
