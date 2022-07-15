@@ -51,6 +51,8 @@ class RentalHome extends React.Component {
   
   render() {
     const { rentals } = this.state;
+    debugger
+    console.log(this.props);
 
     return (
       <div className="card-list">
