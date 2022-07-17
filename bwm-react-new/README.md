@@ -1,10 +1,8 @@
-# Getting started with Create React App
+# bwm-react-new
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## React version
-
-React version ^18.2.0
+React version ^18.2.0.
 
 ## Available scripts
 
